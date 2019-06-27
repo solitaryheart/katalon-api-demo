@@ -13,15 +13,29 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WS.sendRequest(findTestObject('RESTWebServices/ListUsers'))
+response1 = WS.sendRequest(findTestObject('RESTWebServices/ListUsers'))
 
-response = WS.sendRequestAndVerify(findTestObject('RESTWebServices/ListUsers'))
+//Parsing the userName out of the response by using JSONSlurper
+def slurper = new groovy.json.JsonSlurper()
 
-WS.verifyElementPropertyValue(response, 'data[1].first_name', 'Charles')
+def result = slurper.parseText(response1.getResponseBodyContent())
 
-WS.verifyElementPropertyValue(response, 'data[2].id', '6')
+//extracts user Tracey
+def value = result.data[2].first_name
 
-WS.verifyElementsCount(response, 'data', 3)
+println('.. value extracted is : ' + value)
 
-WS.verifyResponseStatusCodeInRange(response, 100, 200)
+/* Usage 1 - by using global variable 
+
+GlobalVariable.userName = value
+
+println('..Global variable is : ' + GlobalVariable.userName)
+
+WS.sendRequestAndVerify(findTestObject('RESTWebServices/UpdateUser'))
+*/
+
+// Usage 1- by using parsed vale stored in variable "value directly
+
+WS.sendRequest(findTestObject('RESTWebServices/UpdateUser', [('userName') : value]))
+
 

@@ -1,0 +1,14 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TestSuite1,,,,2019-06-27 09:08:21,2019-06-27 09:08:24,"2,906s",INCOMPLETE
+,,,,,,,
+Test Cases/APIChainingDemo,,,,2019-06-27 09:08:21,2019-06-27 09:08:23,"2,244s",PASSED
+"response1 = sendRequest(findTestObject(""RESTWebServices/ListUsers""))",,,,2019-06-27 09:08:21,2019-06-27 09:08:23,"1,899s",PASSED
+slurper = new groovy.json.JsonSlurper(),,,,2019-06-27 09:08:23,2019-06-27 09:08:23,"0,005s",PASSED
+result = slurper.parseText(response1.getResponseBodyContent()),,,,2019-06-27 09:08:23,2019-06-27 09:08:23,"0,012s",PASSED
+value = first_name,,,,2019-06-27 09:08:23,2019-06-27 09:08:23,"0,005s",PASSED
+"println("".. value extracted is : "" + value)",,,,2019-06-27 09:08:23,2019-06-27 09:08:23,"0,002s",PASSED
+"sendRequest(findTestObject(""RESTWebServices/UpdateUser"", [""userName"":value]))",,,,2019-06-27 09:08:23,2019-06-27 09:08:23,"0,105s",PASSED
+,,,,,,,
+Test Cases/SampleTestOne,,,,2019-06-27 09:08:23,2019-06-27 09:08:24,"0,492s",PASSED
+"sendRequest(findTestObject(""RESTWebServices/CreateUser""))",,,,2019-06-27 09:08:24,2019-06-27 09:08:24,"0,237s",PASSED
+"sendRequest(findTestObject(""RESTWebServices/DeleteUser""))",,,,2019-06-27 09:08:24,2019-06-27 09:08:24,"0,102s",PASSED

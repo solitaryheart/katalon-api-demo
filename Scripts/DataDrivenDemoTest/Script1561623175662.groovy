@@ -13,15 +13,13 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WS.sendRequest(findTestObject('RESTWebServices/ListUsers'))
+println('.......using username ' + name)
 
-response = WS.sendRequestAndVerify(findTestObject('RESTWebServices/ListUsers'))
+println('.......using job ' + job)
 
-WS.verifyElementPropertyValue(response, 'data[1].first_name', 'Charles')
+response = WS.sendRequest(findTestObject('RESTWebServices/CreateUser', [('endpoint') : GlobalVariable.Endpoint, ('name') : name
+            , ('job') : job]))
 
-WS.verifyElementPropertyValue(response, 'data[2].id', '6')
-
-WS.verifyElementsCount(response, 'data', 3)
-
-WS.verifyResponseStatusCodeInRange(response, 100, 200)
+def responseText = response.getResponseText()
+println(responseText)
 

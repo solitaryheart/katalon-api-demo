@@ -1,0 +1,23 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+DataDrivenDemo,,,,2019-06-27 10:47:27,2019-06-27 10:47:31,"3,494s",INCOMPLETE
+,,,,,,,
+Test Cases/DataDrivenDemoTest,,,,2019-06-27 10:47:28,2019-06-27 10:47:30,"2,412s",PASSED
+"println("".......using username "" + name)",,,,2019-06-27 10:47:28,2019-06-27 10:47:28,"0,005s",PASSED
+"println("".......using job "" + job)",,,,2019-06-27 10:47:28,2019-06-27 10:47:28,"0,001s",PASSED
+"response = sendRequest(findTestObject(""RESTWebServices/CreateUser"", [""endpoint"":Endpoint, ""name"":name, ""job"":job]))",,,,2019-06-27 10:47:28,2019-06-27 10:47:30,"2,175s",PASSED
+responseText = response.getResponseText(),,,,2019-06-27 10:47:30,2019-06-27 10:47:30,"0,005s",PASSED
+println(responseText),,,,2019-06-27 10:47:30,2019-06-27 10:47:30,"0,001s",PASSED
+,,,,,,,
+Test Cases/DataDrivenDemoTest,,,,2019-06-27 10:47:30,2019-06-27 10:47:30,"0,441s",PASSED
+"println("".......using username "" + name)",,,,2019-06-27 10:47:30,2019-06-27 10:47:30,"0,001s",PASSED
+"println("".......using job "" + job)",,,,2019-06-27 10:47:30,2019-06-27 10:47:30,"0,000s",PASSED
+"response = sendRequest(findTestObject(""RESTWebServices/CreateUser"", [""endpoint"":Endpoint, ""name"":name, ""job"":job]))",,,,2019-06-27 10:47:30,2019-06-27 10:47:30,"0,429s",PASSED
+responseText = response.getResponseText(),,,,2019-06-27 10:47:30,2019-06-27 10:47:30,"0,001s",PASSED
+println(responseText),,,,2019-06-27 10:47:30,2019-06-27 10:47:30,"0,001s",PASSED
+,,,,,,,
+Test Cases/DataDrivenDemoTest,,,,2019-06-27 10:47:30,2019-06-27 10:47:31,"0,435s",PASSED
+"println("".......using username "" + name)",,,,2019-06-27 10:47:30,2019-06-27 10:47:30,"0,001s",PASSED
+"println("".......using job "" + job)",,,,2019-06-27 10:47:30,2019-06-27 10:47:30,"0,001s",PASSED
+"response = sendRequest(findTestObject(""RESTWebServices/CreateUser"", [""endpoint"":Endpoint, ""name"":name, ""job"":job]))",,,,2019-06-27 10:47:30,2019-06-27 10:47:31,"0,421s",PASSED
+responseText = response.getResponseText(),,,,2019-06-27 10:47:31,2019-06-27 10:47:31,"0,000s",PASSED
+println(responseText),,,,2019-06-27 10:47:31,2019-06-27 10:47:31,"0,000s",PASSED

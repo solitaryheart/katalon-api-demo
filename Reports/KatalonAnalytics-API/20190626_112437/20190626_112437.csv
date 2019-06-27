@@ -1,0 +1,10 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+KatalonAnalytics-API,,,,2019-06-26 11:24:39,2019-06-26 11:24:42,"3,281s",INCOMPLETE
+,,,,,,,
+Test Cases/ListUsersTest,,,,2019-06-26 11:24:39,2019-06-26 11:24:42,"3,082s",PASSED
+"sendRequest(findTestObject(""UserRestService/ListUsers""))",,,,2019-06-26 11:24:39,2019-06-26 11:24:41,"2,189s",PASSED
+"response = sendRequestAndVerify(findTestObject(""UserRestService/ListUsers""))",,,,2019-06-26 11:24:41,2019-06-26 11:24:42,"0,593s",PASSED
+"verifyElementPropertyValue(response, ""data[1].first_name"", ""Charles"")",,,,2019-06-26 11:24:42,2019-06-26 11:24:42,"0,014s",PASSED
+"verifyElementPropertyValue(response, ""data[2].id"", ""6"")",,,,2019-06-26 11:24:42,2019-06-26 11:24:42,"0,016s",PASSED
+"verifyElementsCount(response, ""data"", 3)",,,,2019-06-26 11:24:42,2019-06-26 11:24:42,"0,022s",PASSED
+"verifyResponseStatusCodeInRange(response, 100, 200)",,,,2019-06-26 11:24:42,2019-06-26 11:24:42,"0,009s",PASSED

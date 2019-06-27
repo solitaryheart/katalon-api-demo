@@ -13,15 +13,5 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WS.sendRequest(findTestObject('RESTWebServices/ListUsers'))
-
-response = WS.sendRequestAndVerify(findTestObject('RESTWebServices/ListUsers'))
-
-WS.verifyElementPropertyValue(response, 'data[1].first_name', 'Charles')
-
-WS.verifyElementPropertyValue(response, 'data[2].id', '6')
-
-WS.verifyElementsCount(response, 'data', 3)
-
-WS.verifyResponseStatusCodeInRange(response, 100, 200)
+WS.sendRequest(findTestObject('RESTWebServices/UpdateUser', [('userName') : GlobalVariable.userName]))
 
